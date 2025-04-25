@@ -1,7 +1,7 @@
 'use client';
 
 import { ThemeProvider } from 'next-themes';
-import { CartProvider } from '@/contexts/CartContext';
+import { CartProvider } from '@/components/CartCibtext';
 import { Toaster } from 'sonner';
 
 export function Providers({ children }: { children: React.ReactNode }) {

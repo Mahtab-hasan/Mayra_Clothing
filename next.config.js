@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
-    domains: ['images.unsplash.com'],
-    unoptimized: true
-  }
-};
+    unoptimized: true,
+    domains: ['i.imgur.com'],
+  },
+  trailingSlash: true,
+  reactStrictMode: true,
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

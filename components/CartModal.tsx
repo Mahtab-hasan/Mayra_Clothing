@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Trash2, Minus, Plus, X } from 'lucide-react';
 import { Dialog, DialogContent } from './ui/dialog';
-import { useCart } from '@/contexts/CartContext';
+import { useCart } from '@/components/CartCibtext';
 import { Button } from './ui/button';
 
 interface CartModalProps {
@@ -56,7 +56,7 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
                     <div className="flex justify-between">
                       <h3 className="font-semibold text-black">{item.name}</h3>
                       <button
-                        onClick={() => removeFromCart(item.id)}
+                        onClick={() => removeFromCart(item.id, item.selectedSize, item.selectedColor)}
                         className="text-red-500 hover:text-red-700"
                       >
                         <Trash2 className="h-5 w-5" />

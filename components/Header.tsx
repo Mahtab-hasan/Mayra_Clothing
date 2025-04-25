@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ShoppingCart, Menu, X } from 'lucide-react';
-import { useCart } from '@/contexts/CartContext';
+import { useCart } from '@/components/CartCibtext';
 import { CartModal } from './CartModal';
 
 export function Header() {

@@ -1,10 +1,14 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 import { Product } from '@/models/Product';
 
-interface CartItem extends Product {
+export interface CartItem {
+  id: number;
+  name: string;
+  price: number;
   quantity: number;
-  selectedSize: string;
-  selectedColor: string;
+  image: string;
+  selectedSize?: string;
+  selectedColor?: string;
 }
 
 interface CartContextType {
@@ -35,7 +39,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
         );
       }
 
-      return [...currentItems, { ...product, quantity, selectedSize, selectedColor }];
+      return [...currentItems, { 
+        id: product.id || 0, 
+        name: product.name,
+        price: product.price,
+        quantity,
+        image: product.image,
+        selectedSize,
+        selectedColor
+      }];
     });
   };
 

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Product } from '@/models/Product';
 import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
-import { useCart } from '@/contexts/CartContext';
+import { useCart } from '@/components/CartCibtext';
 import { toast } from 'sonner';
 
 interface ProductDetailModalProps {

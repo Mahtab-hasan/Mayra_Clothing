@@ -1,16 +1,24 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 import { Product } from '@/models/Product';
 
-interface CartItem extends Product {
+interface CartItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  image: string;
   quantity: number;
   selectedSize: string;
   selectedColor: string;
+  sizes: string[];
+  colors: string[];
 }
 
 interface CartContextType {
   items: CartItem[];
   addToCart: (product: Product, quantity: number, selectedSize: string, selectedColor: string) => void;
-  removeFromCart: (productId: number) => void;
+  removeFromCart: (productId: number, selectedSize: string, selectedColor: string) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   clearCart: () => void;
   getCartTotal: () => number;
@@ -35,12 +43,28 @@ export function CartProvider({ children }: { children: ReactNode }) {
         );
       }
 
-      return [...currentItems, { ...product, quantity, selectedSize, selectedColor }];
+      return [...currentItems, { 
+        id: product.id || 0, 
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        category: product.category,
+        image: product.image,
+        quantity,
+        selectedSize,
+        selectedColor,
+        sizes: product.sizes,
+        colors: product.colors
+      }];
     });
   };
 
-  const removeFromCart = (productId: number) => {
-    setItems(currentItems => currentItems.filter(item => item.id !== productId));
+  const removeFromCart = (productId: number, selectedSize: string, selectedColor: string) => {
+    setItems(currentItems => 
+      currentItems.filter(item => 
+        !(item.id === productId && item.selectedSize === selectedSize && item.selectedColor === selectedColor)
+      )
+    );
   };
 
   const updateQuantity = (productId: number, quantity: number) => {

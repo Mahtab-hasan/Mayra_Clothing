@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useCart } from '@/components/CartCibtext';
@@ -10,6 +10,12 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { items } = useCart();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const cartItemsCount = items.reduce((total, item) => total + item.quantity, 0);
 
@@ -31,7 +37,7 @@ export function Header() {
             onClick={() => setIsCartOpen(true)}
           >
             <ShoppingCart className="w-6 h-6" />
-            {cartItemsCount > 0 && (
+            {mounted && cartItemsCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
                 {cartItemsCount}
               </span>

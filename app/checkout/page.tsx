@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useCart } from '@/components/CartCibtext';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import Link from 'next/link';
 
 export default function CheckoutPage() {
   const { items, getCartTotal } = useCart();
@@ -43,14 +44,65 @@ export default function CheckoutPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle order submission
+    
+    // Create order details message
+    const orderDetails = `
+*New Order Received!* 🎉
+
+*Customer Information:*
+👤 Name: ${formData.firstName} ${formData.lastName}
+📧 Email: ${formData.email}
+📱 Phone: ${formData.phone}
+📍 Address: ${formData.address}, ${formData.area}, ${formData.city}
+
+*Order Details:*
+${items.map(item => `
+🛍️ *${item.name}*
+   - Size: ${item.selectedSize}
+   - Color: ${item.selectedColor}
+   - Quantity: ${item.quantity}
+   - Price: ৳${item.price * item.quantity}
+`).join('\n')}
+
+*Payment Information:*
+💳 Payment Method: ${paymentMethod}
+💰 Subtotal: ৳${subtotal}
+🚚 Shipping: ৳${shippingCost}
+💵 Total: ৳${total}
+    `.trim();
+
+    // Save order details to localStorage
+    const orderData = {
+      customerInfo: {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        area: formData.area
+      },
+      items: items,
+      paymentMethod,
+      subtotal,
+      shippingCost,
+      total
+    };
+    localStorage.setItem('lastOrder', JSON.stringify(orderData));
+
+    // Encode the message for WhatsApp URL
+    const encodedMessage = encodeURIComponent(orderDetails);
+    
+    // Open WhatsApp with the message
+    window.open(`https://wa.me/8801711192205?text=${encodedMessage}`, '_blank');
+
+    // Show success message
     toast.success('Order placed successfully! Thank you for shopping with us.', {
       duration: 3000,
     });
     
-    setTimeout(() => {
-      router.push('/');
-    }, 3000);
+    // Redirect to order success page
+    router.push('/order-success');
   };
 
   if (!mounted) {
@@ -60,7 +112,16 @@ export default function CheckoutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-center text-gray-900 mb-8">Checkout</h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Checkout</h1>
+          <Link 
+            href="/" 
+            className="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+          >
+            <i className="fas fa-home"></i>
+            <span>Go to Home</span>
+          </Link>
+        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Delivery Information Form */}

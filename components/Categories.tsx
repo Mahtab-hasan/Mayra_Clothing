@@ -1,6 +1,23 @@
+'use client';
+
+import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export function Categories() {
+  const router = useRouter();
+
+  const handleCategoryClick = (category: string) => {
+    // Scroll to products section
+    const productsSection = document.getElementById('shop');
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Set the category in URL
+    // router.push(`#shop?category=${category}`);
+    router.push(`?category=${category}#shop`);
+  };
+
   return (
     <section id="categories" className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold text-center mb-12 animate-slideInDown text-white">
@@ -8,7 +25,10 @@ export function Categories() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Men's Category */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-slideInLeft">
+        <div 
+          onClick={() => handleCategoryClick('men')}
+          className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-slideInLeft"
+        >
           <div className="relative h-64">
             <Image
               src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d"
@@ -32,7 +52,10 @@ export function Categories() {
         </div>
 
         {/* Women's Category */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-slideInRight">
+        <div 
+          onClick={() => handleCategoryClick('women')}
+          className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-slideInRight"
+        >
           <div className="relative h-64">
             <Image
               src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f"

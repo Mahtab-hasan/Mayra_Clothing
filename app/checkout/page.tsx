@@ -86,23 +86,36 @@ ${items.map(item => `
       paymentMethod,
       subtotal,
       shippingCost,
-      total
+      total,
+      orderDate: new Date().toISOString()
     };
-    localStorage.setItem('lastOrder', JSON.stringify(orderData));
 
-    // Encode the message for WhatsApp URL
-    const encodedMessage = encodeURIComponent(orderDetails);
-    
-    // Open WhatsApp with the message
-    window.open(`https://wa.me/8801711192205?text=${encodedMessage}`, '_blank');
+    try {
+      // Save order data
+      localStorage.setItem('lastOrder', JSON.stringify(orderData));
+      // Set flag to indicate order has been placed
+      localStorage.setItem('isOrderPlaced', 'true');
+      
+      // Clear cart after successful order
+      localStorage.removeItem('cartItems');
 
-    // Show success message
-    toast.success('Order placed successfully! Thank you for shopping with us.', {
-      duration: 3000,
-    });
-    
-    // Redirect to order success page
-    router.push('/order-success');
+      // Encode the message for WhatsApp URL
+      const encodedMessage = encodeURIComponent(orderDetails);
+      
+      // Open WhatsApp with the message
+      window.open(`https://wa.me/8801711192205?text=${encodedMessage}`, '_blank');
+
+      // Show success message
+      toast.success('Order placed successfully! Thank you for shopping with us.', {
+        duration: 3000,
+      });
+      
+      // Redirect to order success page
+      router.push('/order-success');
+    } catch (error) {
+      console.error('Error saving order:', error);
+      toast.error('There was an error processing your order. Please try again.');
+    }
   };
 
   if (!mounted) {

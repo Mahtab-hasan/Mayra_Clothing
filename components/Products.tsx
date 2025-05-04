@@ -18,7 +18,7 @@ export function Products() {
 
   useEffect(() => {
     if (mounted) {
-      const urlCategory = searchParams.get('category');
+      const urlCategory = searchParams?.get('category');
       if (urlCategory) {
         setCategory(urlCategory);
         setShowAll(true);

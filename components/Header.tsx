@@ -56,13 +56,15 @@ export function Header() {
               )}
             </button>
 
-            <Link 
-              href="/order-success"
-              className="flex items-center gap-2 bg-green-600 text-white px-3 py-1 rounded-lg hover:bg-green-700 transition-colors"
-            >
-              <Package className="w-5 h-5" />
-              <span className="hidden md:inline">Orders</span>
-            </Link>
+            {mounted && localStorage.getItem('isOrderPlaced') === 'true' && (
+              <Link 
+                href="/order-success"
+                className="flex items-center gap-2 bg-green-600 text-white px-3 py-1 rounded-lg hover:bg-green-700 transition-colors"
+              >
+                <Package className="w-5 h-5" />
+                <span className="hidden md:inline">View Order</span>
+              </Link>
+            )}
 
             <button 
               className="md:hidden"

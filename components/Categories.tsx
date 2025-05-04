@@ -14,7 +14,6 @@ export function Categories() {
       productsSection.scrollIntoView({ behavior: 'smooth' });
     }
     // Set the category in URL
-    // router.push(`#shop?category=${category}`);
     router.push(`?category=${category}#shop`);
   };
 

@@ -4,9 +4,14 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { ProductCard } from './ProductCard';
-import { products } from '@/data/products';
+// import { products } from '@/data/products'; // Remove this import
+import { Product } from '@/models/Product'; // Import Product type
 
-export function Products() {
+interface ProductsProps {
+  products: Product[]; // Add products prop
+}
+
+export function Products({ products }: ProductsProps) { // Accept products prop
   const [mounted, setMounted] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [category, setCategory] = useState('all');
@@ -43,7 +48,7 @@ export function Products() {
   }
 
   return (
-    <section id="shop" className="mx-[17px] md:mx-auto py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-lg shadow-sm mx-5 sm:mx-auto">
+    <section id="shop" className="mx-[16px] md:mx-auto py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-lg shadow-sm mx-5 sm:mx-auto">
       <div className="flex justify-between items-center mb-8 animate-slideInDown">
         <h2 className="text-3xl font-bold text-black sm:text-4xl text-xl">Featured Products</h2>
         <button

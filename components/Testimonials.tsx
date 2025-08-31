@@ -10,84 +10,84 @@ export function Testimonials() {
     {
       name: "Tasnim Akter",
       location: "Pahartali, Chittagong",
-      image: "https://i.imgur.com/J5Z9Q0x.jpg",
+      image: "/images/client1.jpg",
       rating: 5,
       text: "Mayra Clothing er t-shirt gula onek valo quality. DTF print o besh durable. Delivery o fast. Highly recommended!"
     },
     {
       name: "Rahim Khan",
       location: "Bandar Bazar, Sylhet",
-      image: "https://i.imgur.com/8Km9t0d.jpg",
+      image: "/images/client2.jpg",
       rating: 5,
       text: "Shirt gulor design ekdom unique! Price o reasonable. Ar size perfect milse. Abar kinbo inshaAllah!"
     },
     {
       name: "Nusrat Jahan",
       location: "Kazla, Rajshahi",
-      image: "https://i.imgur.com/3QmZ0Yk.jpg",
+      image: "/images/client3.jpg",
       rating: 4.5,
       text: "Product quality bhalo but delivery ekdin late hoise. Customer service valo, tara solve kore dise."
     },
     {
       name: "Farhan Ahmed",
       location: "Boikali, Khulna",
-      image: "https://i.imgur.com/4QmZ0Yk.jpg",
+      image: "/images/client4.jpg",
       rating: 5,
       text: "DTF print er quality onek bhalo. Color fade hoy na. Comfortable to wear. Will buy again!"
     },
     {
       name: "Meherin Sultana",
       location: "Chowhatta, Barisal",
-      image: "https://i.imgur.com/5QmZ0Yk.jpg",
+      image: "/images/client5.jpg",
       rating: 5,
       text: "Designs are very unique and trendy. Perfect for casual wear. Delivery was super fast!"
     },
     {
       name: "Imran Hossain",
       location: "Dhaleswari, Rangpur",
-      image: "https://i.imgur.com/6QmZ0Yk.jpg",
+      image: "/images/client6.jpg",
       rating: 4.5,
       text: "Price is reasonable for the quality. Size chart is accurate. Happy with my purchase."
     },
     {
       name: "Tahmina Rahman",
       location: "Brahmaputra, Mymensingh",
-      image: "https://i.imgur.com/7QmZ0Yk.jpg",
+      image: "/images/client7.jpg",
       rating: 5,
       text: "Love the fabric quality. Perfect for our weather. Customer service is excellent!"
     },
     {
       name: "Sakib Hasan",
       location: "Kandirpar, Comilla",
-      image: "https://i.imgur.com/8QmZ0Yk.jpg",
+      image: "/images/client8.jpg",
       rating: 5,
       text: "Best t-shirts in Bangladesh. DTF print is amazing. Will recommend to friends!"
     },
     {
       name: "Nazia Akter",
       location: "Monirampur, Jessore",
-      image: "https://i.imgur.com/9QmZ0Yk.jpg",
+      image: "/images/client9.jpg",
       rating: 4.5,
       text: "Very comfortable fabric. Design is unique. Perfect for everyday wear."
     },
     {
       name: "Rafiq Islam",
       location: "Fatullah, Narayanganj",
-      image: "https://i.imgur.com/10QmZ0Yk.jpg",
+      image: "/images/client10.jpg",
       rating: 5,
       text: "Great quality at affordable price. Fast delivery. Will be a regular customer!"
     },
     {
       name: "Sharmin Akter",
       location: "Tongi, Gazipur",
-      image: "https://i.imgur.com/11QmZ0Yk.jpg",
+      image: "/images/client11.jpg",
       rating: 5,
       text: "Love the collection. Perfect fit. Quality is excellent. Highly recommended!"
     },
     {
       name: "Salman Ahmed",
       location: "Mirpur DOHS, Dhaka",
-      image: "https://i.imgur.com/12QmZ0Yk.jpg",
+      image: "/images/client12.jpg",
       rating: 5,
       text: "Mayra Clothing er product quality darun! Design gulo khub attractive. Ami khub satisfied."
     }
@@ -114,7 +114,7 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="mx-[17px] md:mx-auto py-8 px-4 sm:py-12 sm:px-6 lg:px-18 max-w-6xl rounded-xl mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mx-5 sm:mx-auto">
+    <section id="testimonials" className="mx-[16px] sm:mx-auto py-8 px-4 sm:py-12 sm:px-6 lg:px-18 max-w-6xl rounded-xl mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mx-5 sm:mx-auto">
       <h2 className="text-3xl font-bold text-center mb-12 text-[#fffefe] animate-slideInDown">
         Customer Reviews
       </h2>

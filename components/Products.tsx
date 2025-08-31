@@ -116,7 +116,7 @@ export function Products({ products }: ProductsProps) { // Accept products prop
         layout
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {displayProducts.map((product) => (
             <motion.div
               key={product.id}

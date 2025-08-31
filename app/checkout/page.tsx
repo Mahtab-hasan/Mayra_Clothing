@@ -69,6 +69,8 @@ ${items.map(item => `
 💰 Subtotal: ৳${subtotal}
 🚚 Shipping: ৳${shippingCost}
 💵 Total: ৳${total}
+
+*Note:* Please send this message to confirm your order. Your order will not be confirmed until we receive this message.
     `.trim();
 
     // Save order details to localStorage

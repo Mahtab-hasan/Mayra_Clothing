@@ -75,8 +75,8 @@ export default function OrderSuccessPage() {
           <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <i className="fas fa-exclamation-circle text-4xl text-red-600"></i>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Error Loading Order</h1>
-          <p className="text-gray-600 mb-6">{error}</p>
+          <h1 className="text-2xl font-bold text-black mb-4">Error Loading Order</h1>
+          <p className="text-black mb-6">{error}</p>
           <Link 
             href="/" 
             className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors"
@@ -97,7 +97,7 @@ export default function OrderSuccessPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center gap-2">
-                <h1 className="text-2xl font-bold text-gray-900">Mayra Clothing</h1>
+                <h1 className="text-2xl font-bold text-black">Mayra Clothing</h1>
               </Link>
               <div className="flex items-center gap-4">
                 <Link 
@@ -120,11 +120,11 @@ export default function OrderSuccessPage() {
                   <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <i className="fas fa-check text-4xl text-green-600"></i>
                   </div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">Order Details</h1>
-                  <p className="text-gray-600">Here are the details of your recent order.</p>
+                  <h1 className="text-3xl font-bold text-black mb-2">Order Details</h1>
+                  <p className="text-black">Here are the details of your recent order.</p>
                 </div>
 
-                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div className="bg-white text-black rounded-lg shadow-md p-6 mb-8">
                   <h2 className="text-xl font-semibold mb-4">Order Information</h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -163,15 +163,15 @@ export default function OrderSuccessPage() {
                         </div>
                         <div className="flex-1">
                           <div className="flex justify-between items-start">
-                            <h4 className="font-medium text-gray-800">{item.name}</h4>
-                            <span className="font-semibold text-gray-800">৳{item.price * item.quantity}</span>
+                            <h4 className="font-medium text-black">{item.name}</h4>
+                            <span className="font-semibold text-black">৳{item.price * item.quantity}</span>
                           </div>
                           <div className="mt-2 space-y-1">
-                            <div className="flex justify-between text-sm text-gray-600">
+                            <div className="flex justify-between text-sm text-black">
                               <span>Size: {item.selectedSize}</span>
                               <span>Color: {item.selectedColor}</span>
                             </div>
-                            <div className="flex justify-between text-sm text-gray-600">
+                            <div className="flex justify-between text-sm text-black">
                               <span>Price: ৳{item.price}</span>
                               <span>Quantity: {item.quantity}</span>
                             </div>
@@ -187,8 +187,8 @@ export default function OrderSuccessPage() {
                 <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Package className="w-10 h-10 text-gray-400" />
                 </div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">No Orders Yet</h1>
-                <p className="text-gray-600 mb-6">You haven&apos;t placed any orders yet. Start shopping to see your orders here!</p>
+                <h1 className="text-3xl font-bold text-black mb-2">No Orders Yet</h1>
+                <p className="text-black mb-6">You haven&apos;t placed any orders yet. Start shopping to see your orders here!</p>
                 <Link 
                   href="/" 
                   className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors"

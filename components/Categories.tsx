@@ -28,12 +28,12 @@ export function Categories() {
           onClick={() => handleCategoryClick('men')}
           className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-slideInLeft"
         >
-          <div className="relative h-64">
+          <div className="relative  w-full h-[500px]">
             <Image
-              src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d"
+              src="/images/menfashion.jpg"
               alt="Men's Collection"
               fill
-              className="object-cover"
+              className="object-cover "
             />
             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
               <h3 className="text-white text-2xl font-bold">Men&apos;s Fashion</h3>
@@ -55,9 +55,9 @@ export function Categories() {
           onClick={() => handleCategoryClick('women')}
           className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-slideInRight"
         >
-          <div className="relative h-64">
+          <div className="relative w-full h-[500px]">
             <Image
-              src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f"
+              src="/images/womenfashion.jpeg"
               alt="Women's Collection"
               fill
               className="object-cover"

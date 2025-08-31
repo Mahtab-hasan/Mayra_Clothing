@@ -15,7 +15,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(300deg, #ffffff, #b1fffb, #5e75ec, #96beae);
+  background: linear-gradient(300deg, #cbcbfa, #b1fffb, #5ae9ee, #c1f5c2);
   background-size: 300% 300%;
   animation: textGradient 8s ease infinite;
   -webkit-background-clip: text;
@@ -24,14 +24,14 @@
 }
 
 .shop-now-button {
-  background: linear-gradient(300deg,#2e2e2e, #88c9c5, #6779d3, #b5d8ca);
+  background: linear-gradient(300deg,#cbcbfa, #b1fffb, #5ae9ee, #c1f5c2);
   background-size: 300% 300%;
   animation: buttonGradient 8s ease infinite;
   border: none;
   padding: 1rem 3rem;
   font-size: 1.25rem;
   border-radius: 30px;
-  color: white;
+  color: rgb(0, 0, 0);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;

@@ -7,6 +7,7 @@ import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { useCart } from '@/components/CartCibtext';
 import { toast } from 'sonner';
+import { useRouter } from 'next/navigation';
 
 interface ProductDetailModalProps {
   product: Product;
@@ -20,6 +21,12 @@ export function ProductDetailModal({ product, isOpen, onClose }: ProductDetailMo
   const [quantity, setQuantity] = useState(1);
   const [showFullImage, setShowFullImage] = useState(false);
   const { addToCart } = useCart();
+  const router = useRouter();
+
+  const handleBuyNow = () => {
+    addToCart(product, quantity, selectedSize, selectedColor);
+    router.push('/checkout');
+  };
 
   const handleAddToCart = () => {
     addToCart(product, quantity, selectedSize, selectedColor);
@@ -139,13 +146,22 @@ export function ProductDetailModal({ product, isOpen, onClose }: ProductDetailMo
                 </div>
               </div>
 
-              <Button
-                onClick={handleAddToCart}
-                className="w-full py-4 md:py-6 text-base md:text-lg bg-black text-white hover:bg-gray-800 transition-colors"
-                disabled={!selectedSize || !selectedColor}
-              >
-                Add to Cart - ৳{product.price * quantity}
-              </Button>
+              <div className="flex gap-4">
+                <Button
+                  onClick={handleAddToCart}
+                  className="w-full py-4 md:py-6 text-base md:text-lg bg-[#1c1c1c] text-white hover:bg-[#5d5c5c] transition-colors"
+                  disabled={!selectedSize || !selectedColor}
+                >
+                  Add to Cart - ৳{product.price * quantity}
+                </Button>
+                <Button
+                  onClick={handleBuyNow}
+                  className="w-full py-4 md:py-6 text-base md:text-lg bg-[#1c1c1c] text-white hover:bg-[#5d5c5c] transition-colors"
+                  disabled={!selectedSize || !selectedColor}
+                >
+                  Buy Now
+                </Button>
+              </div>
             </div>
           </div>
         </DialogContent>

@@ -33,19 +33,22 @@ export function Products() {
     ? products 
     : products.filter(product => product.category.toLowerCase() === category.toLowerCase());
 
-  const displayProducts = showAll ? filteredProducts : filteredProducts.slice(0, 4);
+  // Shuffle the filtered products for random display
+  const shuffledProducts = [...filteredProducts].sort(() => Math.random() - 0.5);
+
+  const displayProducts = showAll ? filteredProducts : shuffledProducts.slice(0, 4);
 
   if (!mounted) {
     return null;
   }
 
   return (
-    <section id="shop" className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-lg shadow-sm">
+    <section id="shop" className="mx-[17px] md:mx-auto py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-lg shadow-sm mx-5 sm:mx-auto">
       <div className="flex justify-between items-center mb-8 animate-slideInDown">
-        <h2 className="text-3xl font-bold text-black">Featured Products</h2>
+        <h2 className="text-3xl font-bold text-black sm:text-4xl text-xl">Featured Products</h2>
         <button
           onClick={() => setShowAll(!showAll)}
-          className="text-indigo-600 hover:text-indigo-800 font-semibold transition-colors duration-300 hover-scale"
+          className="sm:text-indigo-600 text-indigo-600 hover:text-indigo-800 font-semibold transition-colors duration-300 hover-scale text-sm sm:text-base"
         >
           {showAll ? 'Show Less' : 'View All'}
         </button>

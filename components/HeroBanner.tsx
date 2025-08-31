@@ -53,7 +53,8 @@ export function HeroBanner() {
         autoPlay
         loop
         muted
-        playsInline
+                playsInline
+        poster="/images/bannar.jpg"
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
         <source src="/images/Bold Retro Fashion Blog Style Review Blog Banner.mp4" type="video/mp4" />
@@ -61,7 +62,7 @@ export function HeroBanner() {
       
       <div className="absolute inset-0 bg-black/30 md:bg-black/40" />
       
-      <div className="absolute inset-0 flex items-center justify-center mt-[10%] sm:mt-[16%] px-4">
+      <div className="absolute inset-0 flex items-center justify-center mt-[20%] sm:mt-[16%] px-4">
         <div className="text-center w-full max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 tracking-wide animate-fadeIn">
             <span className="gradient-text text-2xl sm:text-4xl">Discover Your Style With</span>

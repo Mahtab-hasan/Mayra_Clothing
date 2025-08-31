@@ -28,12 +28,14 @@ export function Categories() {
           onClick={() => handleCategoryClick('men')}
           className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-slideInLeft"
         >
-          <div className="relative  w-full h-[500px]">
+          <div className="relative  w-full h-[300px] sm:h-[400px] md:h-[500px]">
             <Image
               src="/images/menfashion.jpg"
               alt="Men's Collection"
               fill
-              className="object-cover "
+              className="object-cover"
+              loading="lazy"
+              quality={50}
             />
             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
               <h3 className="text-white text-2xl font-bold">Men&apos;s Fashion</h3>
@@ -55,12 +57,14 @@ export function Categories() {
           onClick={() => handleCategoryClick('women')}
           className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-slideInRight"
         >
-          <div className="relative w-full h-[500px]">
+          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
             <Image
               src="/images/womenfashion.jpeg"
               alt="Women's Collection"
               fill
               className="object-cover"
+              loading="lazy"
+              quality={50}
             />
             <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
               <h3 className="text-white text-2xl font-bold">Women&apos;s Fashion</h3>

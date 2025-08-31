@@ -19,10 +19,11 @@ export function SeasonalBanner() {
           </div>
           <div className="w-full md:w-1/2 relative h-72">
             <Image
-              src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3"
+              src="/images/bannar.jpg"
               alt="About Mayra Clothing"
               fill
               className="rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 object-cover"
+              quality={50}
             />
           </div>
         </div>

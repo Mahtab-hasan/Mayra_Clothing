@@ -22,12 +22,12 @@ export function Header() {
   const cartItemsCount = items.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <header className="bg-white shadow-sm fixed w-full top-0 z-50 text-black">
+    <header className="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 text-black border-b border-white/20">
       <nav className="container mx-auto px-4 py-4 relative">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold"><Link href="#">Mayra Clothing</Link></h1>
           
-          <div className={`md:flex items-center gap-8 ${isMenuOpen ? 'flex flex-col absolute top-16 left-0 w-full bg-white p-4' : 'hidden md:flex absolute left-1/2 -translate-x-1/2'}`}>
+          <div className={`md:flex items-center gap-8 ${isMenuOpen ? 'flex flex-col absolute top-16 left-0 w-full bg-white/90 backdrop-blur-md p-4 border-b border-white/20' : 'hidden md:flex absolute left-1/2 -translate-x-1/2'}`}>
             <Link href="#" className="hover:text-gray-600">Home</Link>
             <Link 
               href="#shop" 

@@ -25,10 +25,10 @@ export function ProductCard({ product }: ProductCardProps) {
             src={product.image}
             alt={product.name}
             fill
-            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-            priority
-            quality={75}
-            className={`object-cover transition-transform duration-300 group-hover:scale-150 ${
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            quality={50}
+            loading="lazy"
+            className={`object-cover transition-transform duration-300 sm:group-hover:scale-150 ${
               isLoading ? 'opacity-0' : 'opacity-100'
             }`}
             onLoad={() => setIsLoading(false)}

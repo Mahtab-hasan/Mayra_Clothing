@@ -38,7 +38,7 @@ export function ProductDetailModal({ product, isOpen, onClose }: ProductDetailMo
     <>
       {/* Full Image View Modal */}
       <Dialog open={showFullImage} onOpenChange={setShowFullImage}>
-        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-transparent border-none">
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-transparent border-none backdrop-blur-sm">
           <div className="relative w-full h-[80vh]">
             <Image
               src={product.image}

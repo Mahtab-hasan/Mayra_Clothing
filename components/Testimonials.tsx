@@ -127,7 +127,7 @@ export function Testimonials() {
           {getVisibleTestimonials().map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-[300px] flex flex-col justify-between transform hover:scale-105"
+              className="bg-white p-4 sm:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-[250px] sm:h-[300px] flex flex-col justify-between transform hover:scale-105"
             >
               <div>
                 <div className="flex items-center mb-4">
@@ -151,6 +151,8 @@ export function Testimonials() {
                     alt={testimonial.name}
                     fill
                     className="rounded-full object-cover"
+                    quality={40}
+                    loading="lazy"
                   />
                 </div>
                 <div className="ml-3">

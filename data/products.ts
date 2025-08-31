@@ -294,7 +294,7 @@ export const products = [
     name: "linkin park T-Shirt",
     price: 300,
     image: "/images/Group 1438.png",
-    category: "",
+    category: "men",
     sizes: ["M", "L", "XL"],
     colors: ["Black", "White", "Gray"],
     description: "Stylish DTF printed linkin park design t-shirt"

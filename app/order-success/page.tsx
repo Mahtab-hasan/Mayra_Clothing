@@ -31,6 +31,7 @@ interface OrderDetails {
   subtotal: number;
   shippingCost: number;
   total: number;
+  orderDate: string;
 }
 
 export default function OrderSuccessPage() {
@@ -46,7 +47,7 @@ export default function OrderSuccessPage() {
       if (orderData) {
         const parsedData = JSON.parse(orderData);
         // Validate the order data
-        if (parsedData.items && parsedData.customerInfo && parsedData.total) {
+        if (parsedData.items && parsedData.customerInfo && parsedData.total && parsedData.orderDate) {
           setOrderDetails(parsedData);
         } else {
           setError('Invalid order data');
@@ -148,6 +149,30 @@ export default function OrderSuccessPage() {
                       </div>
                     </div>
                   </div>
+
+                  {/* Order Date and Time */}
+                  {orderDetails.orderDate && (
+                    <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                      <h3 className="text-lg font-medium mb-2 text-blue-800">Order Confirmation</h3>
+                      <div className="space-y-1">
+                        <p className="text-blue-700">
+                          <span className="font-medium">Order Date:</span> {new Date(orderDetails.orderDate).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
+                        </p>
+                        <p className="text-blue-700">
+                          <span className="font-medium">Order Time:</span> {new Date(orderDetails.orderDate).toLocaleTimeString('en-US', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            second: '2-digit',
+                            hour12: true
+                          })}
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   <h3 className="text-lg font-medium mb-4">Ordered Items</h3>
                   <div className="space-y-4">

@@ -105,6 +105,7 @@ ${items.map(item => `
       const encodedMessage = encodeURIComponent(orderDetails);
       
       // Open WhatsApp with the message
+      // window.open(`https://wa.me/8801799659201?text=${encodedMessage}`, '_blank');
       window.open(`https://wa.me/8801711192205?text=${encodedMessage}`, '_blank');
 
       // Show success message

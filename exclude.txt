@@ -1,0 +1,5 @@
+
+.bolt
+.git
+.next
+node_modules
